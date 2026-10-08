@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+	--ink: #20232d;
+	--muted: #646978;
+	--accent: #4d5ec8;
+	--accent-hover: #3d4daf;
+	--line: #e6e8ef;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: #f7f8fb;
+}
+
+.site-header {
+	width: 100%;
+	border-bottom: 1px solid var(--line);
+	background: #fff;
+}
+
+.header-content {
+	width: min(100% - 48px, 1200px);
+	min-height: 82px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 32px;
+}
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 11px;
+	color: var(--ink);
+	text-decoration: none;
+	flex-shrink: 0;
+}
+
+.brand-mark {
+	width: 39px;
+	height: 39px;
+	display: grid;
+	place-items: center;
+	border-radius: 10px;
+	background: var(--accent);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.brand-name {
+	font-family: inherit;
+	font-size: 24px;
+	font-weight: 300;
+}
+
+.brand-name strong {
+	color: var(--accent);
+	font-weight: 400;
+}
+
+.main-navigation {
+	display: flex;
+	align-items: center;
+	gap: 34px;
+}
+
+.navigation-link {
+	color: var(--muted);
+	font-size: 14px;
+	font-weight: 400;
+	text-decoration: none;
+	transition: color 150ms ease;
+}
+
+.navigation-link:hover,
+.navigation-link:focus-visible {
+	color: var(--accent);
+}
+
+.navigation-link-primary {
+	padding: 11px 16px;
+	border: 1px solid var(--accent);
+	border-radius: 6px;
+	background: var(--accent);
+	color: #fff;
+	transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.navigation-link-primary:hover,
+.navigation-link-primary:focus-visible {
+	border-color: var(--accent-hover);
+	background: var(--accent-hover);
+	color: #fff;
+}
+
+.navigation-link:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+	.header-content {
+		width: min(100% - 32px, 1200px);
+		min-height: 0;
+		padding: 16px 0;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.brand-name {
+		font-size: 22px;
+	}
+
+	.main-navigation {
+		width: 100%;
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	.navigation-link {
+		font-size: 13px;
+	}
+
+	.navigation-link-primary {
+		padding: 9px 11px;
+	}
+}
